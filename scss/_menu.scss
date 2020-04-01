@@ -11,11 +11,11 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background: set-text-colour($primary-colour);
         @include easeOut;
     }
 
-    //Rotate Into X With Menu Lines
+    //Rotate Into Z With Menu Lines
     &.close{
         transform: rotate(180deg);
 
@@ -42,7 +42,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    opacity: 0.9; //see background slightly
+    opacity: 1; 
     visibility: hidden;
   
     &.show {
@@ -74,12 +74,22 @@
         transform: translate3d(0, 0, 0);
       }
     }
-    .portrait {
-        width: 250px;
-        height: 250px;
-        background: url('../../img/portrait.jpg');
-        border-radius: 50%;
-        border: solid 3px $secondary-colour;
+    &-branding {
+        background: $primary-colour;
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+    
+        &.show {
+          // Slide in from bottom
+          transform: translate3d(0, 0, 0);
+        }
+        .portrait {
+            width: 250px;
+            height: 250px;
+            background: url('../../img/portrait.jpg');
+            border-radius: 50%;
+            border: solid 3px $secondary-colour;
+        }
     }
 
     .nav-item {
